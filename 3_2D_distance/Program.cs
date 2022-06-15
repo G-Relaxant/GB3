@@ -46,8 +46,17 @@ int Input(string output)                           // Инициализация
 }*/
 
 
+
+
+
+
+
+
+
+
+
 // 2 Variant
-int ax = Input("Введите значение X для точки А: ");
+/*int ax = Input("Введите значение X для точки А: ");
 int ay = Input("Введите значение Y для точки А: ");
 int bx = Input("Введите значение X для точки B: ");
 int by = Input("Введите значение Y для точки B: ");
@@ -73,4 +82,59 @@ int Input(string output)                           // Инициализация
 {
     Console.Write(output);
     return Convert.ToInt32(Console.ReadLine());
+}*/
+
+
+
+
+
+
+
+
+
+
+
+// 3 Variant
+int ax = Input("Введите значение X для точки А: ");
+int ay = Input("Введите значение Y для точки А: ");
+int bx = Input("Введите значение X для точки B: ");
+int by = Input("Введите значение Y для точки B: ");
+
+int cx = ax;
+int cy = by;
+
+int distanceY = CalcDist(cy, ay);
+int distanceX = CalcDist(bx, cx);
+
+double predresult = (Math.Sqrt(Quadro(distanceX) + Quadro(distanceY)));
+
+double result = SokrDoSot(predresult);
+
+Console.WriteLine("Расстояние между точками равно " + result);
+
+
+
+int Input(string output)
+{
+    Console.Write(output);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+int Quadro(int a)
+{
+    return a * a;
+}
+
+int CalcDist(int a, int b)
+{
+    return a - b;
+}
+
+double SokrDoSot(double a)
+{
+    double kor = a * 100;
+    int kor2 = Convert.ToInt32(kor);
+    double kor3 = Convert.ToDouble(kor2);
+    double res = kor3 / 100;
+    return res;
 }
