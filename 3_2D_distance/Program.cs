@@ -15,22 +15,22 @@ int kvadrathipot = (diffca * diffca) + (diffbc * diffbc);
 int product = 0;
 int koren = 0;
 
-while(product < kvadrathipot)
+while(product < kvadrathipot)       // Грубый расчёт корня (гипотенузы)
 {
-    product = koren * koren;
+    product = koren * koren;           
     koren = koren + 1;
 }
 double korstart = koren - 2;
 
 double product2 = korstart * korstart;
 
-while(product2 < kvadrathipot)
+while(product2 < kvadrathipot)      // Точный расчёт корня
 {
     korstart = korstart + 0.01;
     product2 = korstart * korstart;
 }
 
-double kor1 = korstart * 100;
+double kor1 = korstart * 100;        // Сокращение разрядов в дробной части до сотых
 int kor2 = Convert.ToInt32(kor1);
 double kor3 = Convert.ToDouble(kor2);
 double hipot = kor3 / 100;
